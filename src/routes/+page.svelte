@@ -1,6 +1,8 @@
 <script>
   import { onMount } from 'svelte';
 
+  let { data } = $props();
+
   let memos = $state([]);
   let title = $state('');
   let content = $state('');
@@ -64,8 +66,6 @@
 </script>
 
 <div class="container">
-  <h1>メモアプリ</h1>
-
   <div class="memo-form">
     <h2>{editingId ? 'メモを編集' : '新しいメモ'}</h2>
     <input
@@ -121,24 +121,10 @@
 </div>
 
 <style>
-  :global(body) {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, sans-serif;
-    background-color: #f5f5f5;
-  }
-
   .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-  }
-
-  h1 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 30px;
   }
 
   h2 {
