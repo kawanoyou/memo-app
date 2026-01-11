@@ -74,24 +74,20 @@ npm run dev
 
 ## デプロイ
 
-### Vercelへのデプロイ
+### Vercelへのデプロイ（推奨）
 
 1. GitHubリポジトリにプッシュ
 2. [Vercel](https://vercel.com)でプロジェクトをインポート
 3. 環境変数を設定：
    - `TURSO_DATABASE_URL`
    - `TURSO_AUTH_TOKEN`
-4. デプロイ
+4. デプロイボタンをクリック
 
-### Renderへのデプロイ
+設定は自動的に検出されるので、追加設定は不要です。
 
-1. GitHubリポジトリにプッシュ
-2. [Render](https://render.com)で新しいWeb Serviceを作成
-3. Build Command: `npm install && npm run build`
-4. Start Command: `node build`
-5. 環境変数を設定：
-   - `TURSO_DATABASE_URL`
-   - `TURSO_AUTH_TOKEN`
+### その他のプラットフォーム（Render, Fly.io等）
+
+これらのプラットフォームを使用する場合は、`@sveltejs/adapter-node`に変更する必要があります。
 
 ### Fly.ioへのデプロイ
 
